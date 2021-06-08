@@ -1,0 +1,49 @@
+h1 a, h2 a, .firma {
+    text-decoration: none;
+}
+h1 a:hover, h1 a, h1 a:active, h2 a, h2 a:hover, h2 a:active{
+    color: black;
+}
+.foto-presentacion {
+    border-radius: 25px;
+    box-shadow: black 0px 0px 10px;
+    max-width: 290px;
+    width: 100%;
+}
+.division-contenido {
+    background-color: aqua;
+    text-align: center;
+}
+.division-contenido h2 {
+    padding: 10px 0px 10px 0px;
+    margin: 0;
+}
+.elemento {
+    max-width: 250px;
+    box-shadow: black 0px 0px 3px;
+    float: left;
+}
+.proyectos{
+    max-width: 1000px;
+    width: 100%;
+}
+.dev-web{
+    max-width: 300px;
+    width: 100%;
+}
+.firma {
+    font-weight: bold;
+    color: gold;
+}
+.creditos {
+    letter-spacing: 1px;
+    color: white;
+    line-height: 42px;
+}
+footer {
+    height: 60px;
+    background-color: black;
+}
+.container-lg {
+    max-width: 1070px;
+}
