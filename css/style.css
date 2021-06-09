@@ -1,8 +1,21 @@
-h1 a, h2 a, .firma {
+header {
+    background: #2d4250;  
+}
+main {
+    background: #3d5768;  
+}
+.portafolio-web {
+    background: #1a2831;  
+}
+h1, h2, .enlace, p.eslogan{
+    color: white;
+    text-shadow: black 1px 1px 5px;
+}
+h2 a, .firma, h2 a:hover {
     text-decoration: none;
 }
-h1 a:hover, h1 a, h1 a:active, h2 a, h2 a:hover, h2 a:active{
-    color: black;
+h2 a:hover {
+    color: gold;
 }
 .foto-presentacion {
     border-radius: 25px;
@@ -10,22 +23,44 @@ h1 a:hover, h1 a, h1 a:active, h2 a, h2 a:hover, h2 a:active{
     max-width: 290px;
     width: 100%;
 }
-.division-contenido {
-    background-color: aqua;
+.division-contenido, footer, .card-body {
+    background: #16222A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */     
     text-align: center;
+}
+.card-body {
+    color: white;
 }
 .division-contenido h2 {
     padding: 10px 0px 10px 0px;
     margin: 0;
 }
 .elemento {
-    max-width: 250px;
+    width: 260px;
+    margin: 12.5px;
     box-shadow: black 0px 0px 3px;
     float: left;
 }
-.proyectos{
-    max-width: 1000px;
-    width: 100%;
+@media only screen and (min-width: 300px){
+    .contenedor {
+        width: 285px;
+    }
+}
+@media only screen and (min-width: 585px){
+    .contenedor {
+        width: 570px;
+    }
+}
+@media only screen and (min-width: 870px){
+    .contenedor {
+        width: 855px;
+    }
+}
+@media only screen and (min-width: 1160px){
+    .contenedor {
+        width: 1140px;
+    }
 }
 .dev-web{
     max-width: 300px;
@@ -42,8 +77,14 @@ h1 a:hover, h1 a, h1 a:active, h2 a, h2 a:hover, h2 a:active{
 }
 footer {
     height: 60px;
-    background-color: black;
+}
+.firma:hover{
+    color: gold;
+    text-decoration: none;
 }
 .container-lg {
     max-width: 1070px;
+}
+.badge {
+    background-color: black;
 }
