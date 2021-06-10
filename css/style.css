@@ -13,7 +13,7 @@ main {
     background: #C9D6FF;  
 }
 .portafolio-web {
-    background: #c6cde6;  
+    background-image: url('../img/lenguajes.jpg'); 
 }
 h1, h2, .enlace, p.eslogan{
     color: white;
