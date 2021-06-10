@@ -1,13 +1,5 @@
-.portada {
-    position: absolute;
-    z-index: -1;
-    filter: blur(3px);
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-.fondo-header{
-    background: #2d4250c2;
+header {
+    background-image: url('../img/portada-graphic-design.jpg'); 
 }
 main {
     background: #C9D6FF;  
