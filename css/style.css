@@ -104,3 +104,7 @@ footer {
 .badge {
     background-color: black;
 }
+.fotos-modal {
+    width: 100%;
+    height: auto;
+}
