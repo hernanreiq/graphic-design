@@ -1,8 +1,11 @@
 header {
     background-image: url('../img/portada-graphic-design.jpg'); 
 }
-main {
+main, .btn-color {
     background: #C9D6FF;  
+}
+.btn-color:hover {
+    background: #a0b6ff;  
 }
 .portafolio-web {
     background-image: url('../img/lenguajes.jpg'); 
@@ -33,6 +36,9 @@ h2 a:hover {
     box-shadow: black 0px 0px 10px;
     max-width: 290px;
     width: 100%;
+}
+.img-card {
+    min-height: 100px;
 }
 @media only screen and (max-width: 550px){
     .foto-presentacion {
@@ -101,7 +107,7 @@ footer {
 .container-lg {
     max-width: 1070px;
 }
-.badge {
+.badge-firma {
     background-color: black;
 }
 .fotos-modal {
