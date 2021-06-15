@@ -1,7 +1,10 @@
+/* CONTENIDO DEL DOM PARA MANIPULAR MAS ADELANTE */
 var contenedor_tarjetas = document.getElementById('contenedor-tarjetas');
 var fotos_carrusel = document.getElementById('fotos-carrusel');
 var ventana_emergente_texto = document.getElementById('VentanaEmergenteTexto');
+var controles_carrusel = document.getElementById('controles-carrusel');
 
+/* MATRIZ DE OBJETOS CON LAS INFORMACIONES DE LAS IMAGENES PARA LAS TARJETAS */
 var proyectos = [{
   nombre: 'Ed Stylish',
   tipo_proyecto: 'Tienda virtual de ropa pre-amada y nueva.',
@@ -19,6 +22,7 @@ var proyectos = [{
   formato: 'jpg'
 }];
 
+/* CREADOR TARJETAS CON LAS IMAGENES Y DESCRIPCIONES DE LOS PROYECTOS */
 function creadorDeTarjetas(){
   var cantidad_proyectos = proyectos.length;
   for(var i = 0; i < cantidad_proyectos; i++){
@@ -29,7 +33,7 @@ function creadorDeTarjetas(){
     }
     contenedor_tarjetas.innerHTML += `
       <div class="elemento card">
-          <div class="img-card">
+          <div>
             <img src="img/proyectos/${proyectos[i].nombre}/0.${proyectos[i].formato}" class="card-img-top" alt="${proyectos[i].nombre}">
           </div>
           <div class="card-body">
@@ -40,11 +44,10 @@ function creadorDeTarjetas(){
       </div>
     `;
   }
-  console.log('Tarjetas creadas!');
+  efectoMasonry();
 }
 
-creadorDeTarjetas();
-
+/* FUNCIO QUE ACTIVA LA VENTANA EMERGEN O MODAL CON LAS IMAGENES DE LOS PROYECTOS */
 function verImagenes(numero_proyecto){
   ventana_emergente_texto.innerHTML = proyectos[numero_proyecto].nombre;
   fotos_carrusel.innerHTML = '';
@@ -54,17 +57,36 @@ function verImagenes(numero_proyecto){
     } else {
       var primeraFoto = '';
     }
+    if(proyectos[numero_proyecto].cantidad_fotos == 1){
+      controles_carrusel.style.visibility = 'hidden';
+    } else {
+      controles_carrusel.style.visibility = 'visible';
+    }
     fotos_carrusel.innerHTML += `
     <div class="carousel-item ${primeraFoto}">
-      <img src="img/proyectos/${proyectos[numero_proyecto].nombre}/${i}.${proyectos[numero_proyecto].formato}" class="d-block fotos-modal" alt="${proyectos[numero_proyecto].nombre}">
+    <img src="img/proyectos/${proyectos[numero_proyecto].nombre}/${i}.${proyectos[numero_proyecto].formato}" class="d-block fotos-modal" alt="${proyectos[numero_proyecto].nombre}">
     </div>
     `;
   }
+  efectoMasonry();
 }
 
-/* EFECTO MASONRY */
-var elem = document.querySelector('#contenedor-tarjetas');
-var msnry = new Masonry( elem, {
-  itemSelector: '.elemento'
-});
-console.log('Efecto Masonry activado!');
+/* ACTIVANDO LA CREACION DE TARJETAS */
+creadorDeTarjetas();
+
+/* FUNCION PARA LA ACTIVACION Y USO DE LA LIBRERIA MACY.JS PARA HACER EL EFECTO BRICKS O MASONRY */
+function efectoMasonry(){
+  var macyInstance = Macy({
+    container: '#contenedor-tarjetas',
+    trueOrder: false,
+    waitForImages: false,
+    margin: 25,
+    columns: 4,
+    breakAt: {
+      1160: 3,
+      870: 2,
+      585: 1
+    }
+  });
+  macyInstance.recalculate();
+}
