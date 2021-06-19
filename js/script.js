@@ -4,76 +4,25 @@ var fotos_carrusel = document.getElementById('fotos-carrusel');
 var ventana_emergente_texto = document.getElementById('VentanaEmergenteTexto');
 var controles_carrusel = document.getElementById('controles-carrusel');
 
-/* MATRIZ DE OBJETOS CON LAS INFORMACIONES DE LAS IMAGENES PARA LAS TARJETAS */
-var proyectos = [{
-  nombre: 'Ed Stylish',
-  tipo_proyecto: 'Tienda virtual de ropa pre-amada y nueva.',
-  cantidad_fotos: 6,
-  formato: 'jpg'
-},{
-  nombre: 'Golden Lottery',
-  tipo_proyecto: 'Composición web de una lotería virtual.',
-  cantidad_fotos: 1,
-  formato: 'jpg'
-},{
-  nombre: 'El Piloto Tour',
-  tipo_proyecto: 'Grupo de turismo en República Dominicana.',
-  cantidad_fotos: 5,
-  formato: 'jpg'
-},{
-  nombre: 'Logo de CloudNet',
-  tipo_proyecto: 'Logo de una empresa ficticia (Tarea de la universidad).',
-  cantidad_fotos: 1,
-  formato: 'jpg'
-},{
-  nombre: 'Planes de CloudNet',
-  tipo_proyecto: 'Planes de una empresa ficticia (Tarea de la universidad).',
-  cantidad_fotos: 3,
-  formato: 'jpg'
-},{
-  nombre: 'Agentes Inteligentes',
-  tipo_proyecto: 'Portada de presentación de una investigación (Tarea de la universidad).',
-  cantidad_fotos: 1,
-  formato: 'png'
-},{
-  nombre: 'Sarai Bufet',
-  tipo_proyecto: 'Venta de comida tipo bufet para eventos.',
-  cantidad_fotos: 1,
-  formato: 'jpg'
-},{
-  nombre: 'Brochure del catálogo de servicios de CloudNet',
-  tipo_proyecto: 'Catálogo de servicios de una empresa ficticia (Tarea de la universidad).',
-  cantidad_fotos: 3,
-  formato: 'jpg'
-},{
-  nombre: 'Logo de Oziris',
-  tipo_proyecto: 'Tienda de variedades.',
-  cantidad_fotos: 1,
-  formato: 'jpg'
-},{
-  nombre: 'Logo de Earn Golden Money',
-  tipo_proyecto: 'Logo para una web de pagos por clics en anuncios.',
-  cantidad_fotos: 1,
-  formato: 'jpg'
-},{
-  nombre: 'Layout de Earn Golden Money',
-  tipo_proyecto: 'Composición web de la página principal de Earn Golden Money.',
-  cantidad_fotos: 1,
-  formato: 'jpg'
-},{
-  nombre: 'La magia de organizarse',
-  tipo_proyecto: 'Portada de un libro ficticio de Hernan.',
-  cantidad_fotos: 1,
-  formato: 'jpg'
-},{
-  nombre: 'Logo de Soft App Web',
-  tipo_proyecto: 'Logo de una empresa ficticia (Tarea de la universidad).',
-  cantidad_fotos: 1,
-  formato: 'jpg'
-}];
+/* FUNCION PARA OBTENER LOS PROYECTOS DEL ARCHIVO JSON */
+var proyectos;
+function obtenerProyectosJSON(){
+  axios({
+    method: 'GET',
+    url: 'json/proyectos.json'
+  }).then(res=>{
+    /* ACTIVANDO LA CREACION DE TARJETAS */
+    proyectos = res.data;
+    creadorDeTarjetas(proyectos);
+  }).catch(err =>{
+    console.log('No existe esa ruta!', err);
+  })
+}
+
+obtenerProyectosJSON();
 
 /* CREADOR TARJETAS CON LAS IMAGENES Y DESCRIPCIONES DE LOS PROYECTOS */
-function creadorDeTarjetas(){
+function creadorDeTarjetas(proyectos){
   var cantidad_proyectos = proyectos.length;
   for(var i = 0; i < cantidad_proyectos; i++){
     if(proyectos[i].cantidad_fotos > 1){
@@ -120,9 +69,6 @@ function verImagenes(numero_proyecto){
   }
   efectoMasonry();
 }
-
-/* ACTIVANDO LA CREACION DE TARJETAS */
-creadorDeTarjetas();
 
 /* FUNCION PARA LA ACTIVACION Y USO DE LA LIBRERIA MACY.JS PARA HACER EL EFECTO BRICKS O MASONRY */
 function efectoMasonry(){
