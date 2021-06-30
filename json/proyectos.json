@@ -69,5 +69,10 @@
     "tipo_proyecto": "Composición web de mi portafolio de diseños.",
     "cantidad_fotos": 1,
     "formato": "png"
+    },{
+    "nombre": "Base de datos de Credit Analyst",
+    "tipo_proyecto": "Base de datos relacional de un sistema para el análisis de créditos.",
+    "cantidad_fotos": 1,
+    "formato": "png"
     }
 ]
