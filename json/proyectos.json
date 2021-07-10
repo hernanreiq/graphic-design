@@ -74,5 +74,20 @@
     "tipo_proyecto": "Base de datos relacional de un sistema para el análisis de créditos.",
     "cantidad_fotos": 1,
     "formato": "png"
+    },{
+    "nombre": "Mi perfil de GitHub",
+    "tipo_proyecto": "Personalización de mi perfil de GitHub usando Markdown (GitHub: hernanreiq).",
+    "cantidad_fotos": 1,
+    "formato": "jpg"
+    },{
+    "nombre": "Base de datos de Registra el robo SD",
+    "tipo_proyecto": "Base de datos relacional del tema de mi tesis (Sistema web para reportar los robos sufridos en Santo Domingo).",
+    "cantidad_fotos": 1,
+    "formato": "png"
+    },{
+    "nombre": "Registra el robo SD",
+    "tipo_proyecto": "Composición web del tema de mi tesis (Sistema web para reportar los robos sufridos en Santo Domingo).",
+    "cantidad_fotos": 32,
+    "formato": "png"
     }
 ]
