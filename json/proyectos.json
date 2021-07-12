@@ -89,5 +89,10 @@
     "tipo_proyecto": "Composición web del tema de mi tesis (Sistema web para reportar los robos sufridos en Santo Domingo).",
     "cantidad_fotos": 32,
     "formato": "png"
+    },{
+    "nombre": "Web de Sarai Bufet",
+    "tipo_proyecto": "Composición de un sitio web dedicado a la venta de comida (tipo bufet) por encargos.",
+    "cantidad_fotos": 3,
+    "formato": "jpg"
     }
 ]
