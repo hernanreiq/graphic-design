@@ -94,5 +94,15 @@
     "tipo_proyecto": "Composición de un sitio web dedicado a la venta de comida (tipo bufet) por encargos.",
     "cantidad_fotos": 3,
     "formato": "jpg"
+    },{
+    "nombre": "Logo de Sabroso Play",
+    "tipo_proyecto": "Logo para un servicio de Streaming.",
+    "cantidad_fotos": 1,
+    "formato": "png"
+    },{
+    "nombre": "Mi portada de LinkedIn",
+    "tipo_proyecto": "La portada que utilizo en mi perfil de LinkedIn (8/8/2021).",
+    "cantidad_fotos": 1,
+    "formato": "jpg"
     }
 ]
