@@ -104,5 +104,10 @@
     "tipo_proyecto": "La portada que utilizo en mi perfil de LinkedIn (8/8/2021).",
     "cantidad_fotos": 1,
     "formato": "jpg"
+    },{
+    "nombre": "Hunter Cinema",
+    "tipo_proyecto": "Composición web de Hunter Cinema, una prueba técnica para una vacante laboral.",
+    "cantidad_fotos": 1,
+    "formato": "png"
     }
 ]
